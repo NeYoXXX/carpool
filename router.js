@@ -1,18 +1,17 @@
 import Router from 'koa-router'
 import validator, { Joi } from 'koa-context-validator';
 
-let placeRouter = new Router()
-    .get('/:username', 
+let placeRouter = new Router().get(
+    '/:username',
     validator({
-        params: Joi.object().keys({
-            username: Joi.string().required(),
-        }),
-    }),async (ctx)=>{
-
-        // console.log(ctx.db.Place.findAll());
-        ctx.body =  await ctx.db.Place.findAll()
-    })
-
+      params: Joi.object().keys({
+        username: Joi.string().required(),
+      }),
+    }),
+    (ctx) => {
+      ctx.body = ctx.params;
+    },
+  );
 
 let router = new Router({
     prefix: '/api'
