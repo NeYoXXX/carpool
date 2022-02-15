@@ -1,23 +1,29 @@
 {
-  "development": {
+  "production": {
     "username": "root",
     "password": "HZXxbd12.",
     "database": "carpool",
     "host": "152.136.157.153",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
   },
-  "test": {
+  "development": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "123456",
+    "database": "carpool",
     "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
   }
 }
+
