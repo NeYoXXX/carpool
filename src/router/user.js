@@ -10,7 +10,6 @@ let userRouter = new Router()
     }),
     async (ctx) => {
       const project = await ctx.db.User.findByPk(ctx.params.id);
-      console.log(project);
       ctx.status = 200;
       ctx.body = project;
     })
@@ -23,19 +22,19 @@ let userRouter = new Router()
       })
 
     }),
-    (ctx) => {
+    async (ctx) => {
       try {
-        ctx.db.User.create({
+        const userIns = await ctx.db.User.create({
           weixinName: ctx.request.body.weixinName,
           weixinHeadPortrait: ctx.request.body.weixinHeadPortrait,
           phoneNumber: ctx.request.body.phoneNumber
         });
+        ctx.status = 201;
+        ctx.body = userIns;
       } catch (error) {
         console.log(error);
       }
 
 
-      ctx.status = 201;
-      ctx.body = { msg: 'success' };
     });
 export default userRouter;

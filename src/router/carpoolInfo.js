@@ -11,7 +11,6 @@ let carpoolinfoRouter = new Router()
     async (ctx) => {
       const res = await ctx.db.CarpoolInfo.findAll({
         where: {
-          createdAt:
           placeId: ctx.query.placeId
         }
       });

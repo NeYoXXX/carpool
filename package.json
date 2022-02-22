@@ -1,5 +1,5 @@
 {
-  "name": "koa-test",
+  "name": "carpool",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,8 @@
     "build": "npx babel src -d dist",
     "eslint": "npx eslint . --ext .js --fix",
     "init-pro-db": "cross-env NODE_ENV=production babel-node ./src/initDB.js ",
-    "init-dev-db": "cross-env NODE_ENV=development babel-node ./src/initDB.js "
+    "init-dev-db": "cross-env NODE_ENV=development babel-node ./src/initDB.js ",
+    "start-pro": "cross-env NODE_ENV=production babel-node ./src/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "koa-logger": "^3.2.1",
     "koa-router": "^7.4.0",
     "mysql2": "^2.3.3",
+    "pino": "^7.8.0",
     "sequelize": "^6.16.1"
   },
   "devDependencies": {
@@ -28,6 +30,7 @@
     "@babel/core": "^7.17.2",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
+    "cross-env": "^7.0.3",
     "eslint": "^8.9.0",
     "sequelize-cli": "^6.4.1"
   }
